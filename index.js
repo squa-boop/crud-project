@@ -1,4 +1,4 @@
-const apiUrl = "http://localhost:3000/products"; // API endpoint for products
+const apiUrl = "https://crud-project-ex7u.onrender.com/products"; // API endpoint for products
 let allProducts = [];
 
 // Select the form element
