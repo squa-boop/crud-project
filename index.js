@@ -13,10 +13,11 @@ productForm.addEventListener('submit', async function(event) {
 
     // Gather form data
     const name = document.getElementById('name').value;
-    const price = parseFloat(document.getElementById('price').value);
+    const age = parseInt(document.getElementById('age').value);  // Collecting age from the form
+    const product = document.getElementById('product').value;    // Collecting product name from the form
     const color = document.getElementById('color').value;
 
-    const newProduct = { name, price, color };
+    const newProduct = { name, age, product, color };
     
     // Post new product to the server
     await postProduct(newProduct);
@@ -48,8 +49,9 @@ function displayProducts(products) {
         productElement.classList.add('product', 'bg-white', 'p-4', 'shadow', 'rounded');
         productElement.innerHTML = `
             <h3 class="text-lg font-semibold">${product.name}</h3>
+            <p class="text-gray-700">Age: ${product.age}</p>  <!-- Displaying Age -->
+            <p class="text-gray-700">Product: ${product.product}</p> <!-- Displaying Product -->
             <p class="text-gray-700">Color: ${product.color}</p>
-            <p class="text-gray-700">$${product.price ? product.price.toFixed(2) : 'N/A'}</p>
             <button data-id="${product.id}" class="view-btn bg-blue-500 text-white p-2 rounded">View</button>
             <button data-id="${product.id}" class="delete-btn bg-red-500 text-white p-2 rounded">Delete</button>
             <button data-id="${product.id}" class="edit-btn bg-yellow-500 text-white p-2 rounded">Edit</button>
@@ -114,7 +116,8 @@ async function handleEditProduct(event) {
 
     // Fill the form with the current product data for editing
     document.getElementById('name').value = product.name;
-    document.getElementById('price').value = product.price;
+    document.getElementById('age').value = product.age;  // Pre-filling the Age
+    document.getElementById('product').value = product.product;  // Pre-filling the Product
     document.getElementById('color').value = product.color;
 
     // Update form submission to edit the existing product
@@ -123,7 +126,8 @@ async function handleEditProduct(event) {
         event.preventDefault();
         const updatedProduct = {
             name: document.getElementById('name').value,
-            price: parseFloat(document.getElementById('price').value),
+            age: parseInt(document.getElementById('age').value),  // Updating Age
+            product: document.getElementById('product').value,    // Updating Product
             color: document.getElementById('color').value
         };
 
@@ -153,3 +157,14 @@ async function updateProduct(productId, updatedProduct) {
         alert(`Error updating product: ${error.message}`);
     }
 }
+const express = require('express');
+const app = express();
+const port = 3000;
+
+app.get('/', (req, res) => {
+    res.send('Hello, world!');
+});
+
+app.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}`);
+});

@@ -2,10 +2,19 @@
   "dependencies": {
     "autoprefixer": "^10.4.20",
     "express": "^4.21.1",
+    "json-server": "^0.17.4",
+    "module_name": "^1.0.0",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.14"
   },
   "scripts": {
     "build:css": "npx tailwindcss -i ./styles.css -o ./dist/output.css --watch"
-  }
+  },
+  "name": "e-commerce-shopping-clothing",
+  "version": "1.0.0",
+  "description": "This is a simple clothing shopping store Application that allows users to create, read, update, and delete (CRUD) products. The application interacts with a local API and performs operations such as adding new products, viewing a list of products, editing product details, and deleting products. ## Features Add Product: Submit a new product with name, price, and color. View Products: View a list of all products fetched from the API. Edit Product: Update the details of an e ## set up instruction Install JSON Server globally by running: npm install -g json-server ## step  to run clone the repository",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
