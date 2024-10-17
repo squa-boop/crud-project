@@ -41,4 +41,4 @@ API Integration: Ensuring that the application properly communicates with the lo
 Form Handling: Managing form states during creation and editing of products required careful event handling and state management.
 UI Updates: Dynamically updating the product list in the UI after performing CRUD operations was essential for a seamless user experien
 ## Licences
-This project is licensed under the MIT License.[]
+This project is licensed under the MIT License.[https://github.com/squa-boop/crud-project/blob/master/Licences.md]
