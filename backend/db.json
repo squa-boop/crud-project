@@ -1,0 +1,11 @@
+{
+  "products": [
+    {
+      "id": "45c2",
+      "name": "rhema",
+      "age": 17,
+      "product": "hoodie",
+      "color": "white"
+    }
+  ]
+}
